@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Charity Campaign Sign-up</title>
+  <style>
+    .error {
+      color: red;
+    }
+
+    body{
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>"Combat Global Warming!" Sign-up Page</h1>
+
+  <p class="join">Join us Now and help us fight Global Warming! With your help, we can save this planet to benefit everyone, including you!</p>
+  <ol>
+    <li>Mitigating Climate Change: Global warming advocacy aims to address the urgent issue of climate change caused by human activities. By supporting this advocacy, you contribute to the efforts aimed at reducing greenhouse gas emissions, promoting renewable energy sources, and implementing sustainable practices. Taking action to mitigate climate change can help preserve our planet's ecosystems, protect vulnerable communities, and secure a sustainable future for generations to come.</li>
+    <li>Protecting the Environment and Biodiversity: Global warming has severe consequences for the environment and biodiversity. Rising temperatures, changing weather patterns, and habitat destruction threaten numerous plant and animal species. By supporting global warming advocacy, you support initiatives focused on preserving and restoring ecosystems, protecting biodiversity hotspots, and promoting sustainable land and resource management. These efforts help safeguard the natural world and ensure the survival of diverse species and ecosystems.</li>
+    <li>Safeguarding Human Health and Well-being: Climate change has significant implications for human health and well-being. Increasing temperatures, extreme weather events, and the spread of infectious diseases are among the health risks associated with global warming. Supporting global warming advocacy means supporting initiatives that prioritize public health, promote clean air and water, and enhance resilience to climate-related hazards. Taking action to address global warming contributes to creating healthier and safer environments for individuals and communities.</li>
+  </ol>
+
+  <h2>Sign Up:</h2>
+
+  <form id="signup-form" action="#" method="POST">
+    <div>
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first-name" required>
+    </div>
+    <div>
+      <label for="last-name">Last Name:</label>
+      <input type="text" id="last-name" name="last-name" required>
+    </div>
+    <div>
+      <label>Sex:</label>
+      <label for="male">
+        <input type="radio" id="male" name="sex" value="male" required> Male
+      </label>
+      <label for="female">
+        <input type="radio" id="female" name="sex" value="female"> Female
+      </label>
+      <label for="prefer-not-to-say">
+        <input type="radio" id="prefer-not-to-say" name="sex" value="prefer-not-to-say"> Prefer not to say
+      </label>
+    </div>
+    <div>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="contact-number">Contact Number:</label>
+      <input type="tel" id="contact-number" name="contact-number">
+    </div>
+    <div>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </div>
+  </form>
+
+  <script>
+    var form = document.getElementById('signup-form');
+    form.addEventListener('submit', function(event) {
+      var requiredFields = form.querySelectorAll('input[required]');
+      var isFormValid = true;
+
+      for (var i = 0; i < requiredFields.length; i++) {
+        var field = requiredFields[i];
+
+        if (field.value.trim() === '') {
+          isFormValid = false;
+          field.classList.add('error');
+          field.setAttribute('placeholder', 'Please fill out this field');
+        } else {
+          field.classList.remove('error');
+        }
+      }
+
+      if (!isFormValid) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
+
